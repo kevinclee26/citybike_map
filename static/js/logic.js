@@ -3,7 +3,7 @@ var url='static/data/station_information.json'
 
 var myMap=L.map('map-id', {
 	'center': [40.7128, -74.0060], 
-	'zoom': 10
+	'zoom': 12
 })
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -44,5 +44,5 @@ d3.json(url).then(function(data){
 		'small': smallStationsLayer
 	}
 
-	L.control.layers({}, overlayMaps).addTo(myMap);
+	L.control.layers({}, overlayMaps, {'collapsed': false}).addTo(myMap);
 });
